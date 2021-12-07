@@ -3,6 +3,8 @@ import Header from "./header";
 import Carousel from "./carousel";
 import Listproduct from "./list-product";
 import Promotion from "./promotion";
+import "./../index.css"
+
 
 function Baitap3(){
     return(
