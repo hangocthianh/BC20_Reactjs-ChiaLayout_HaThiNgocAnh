@@ -7,7 +7,12 @@ export default class DanhSachSanPham extends Component {
     const {listProduct} = this.props;
     return listProduct.map((product)=>{
       return(
-        <SanPham key={product.maSP} product={product}/>
+        <SanPham 
+        key={product.maSP} 
+        product={product} 
+        detailProduct={this.props.detailProduct} 
+         // {this.props.detailProduct} tên hàm detailProduct là dc truyền từ index
+        addProduct={this.props.addProduct}/>
       )
     });
   }

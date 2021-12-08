@@ -11,6 +11,7 @@ import ListKeys from './list-keys';
 import ExampleListKey from './list-keys/example';
 import Communication from './communication';
 import LiftingStateUpCart from './shopping-cart';
+import Home from './user-management';
 
 
 
@@ -34,6 +35,8 @@ function App() {
       <Communication/>
       <hr/>
       <LiftingStateUpCart/>
+      <hr/>
+      <Home/>
     </div>
   );
 }

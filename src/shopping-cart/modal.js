@@ -2,7 +2,37 @@ import React, { Component } from "react";
 
 export default class Modal extends Component {
 
-  
+  renderCart = () => {
+    const { listCart } = this.props;
+    return listCart.map((cart) => {
+      return (
+        <tr key={cart.maSP}>
+          <td>{cart.maSP}</td>
+          <td>{cart.tenSP}</td>
+          <td>
+            <img src={cart.hinhAnh} width={50} alt="" />
+          </td>
+          <td>
+            <button onClick={()=>{
+              this.props.productUpdateQuantity(cart, false)}}
+              >
+                -
+              </button>
+              {cart.soLuong}
+              <button onClick={()=>{
+              this.props.productUpdateQuantity(cart, true)}}>+</button>
+          </td>
+          <td>{cart.donGia}</td>
+          <td>{cart.donGia * cart.soLuong}</td>
+          <td>
+            <button className="btn btn-danger" onClick={()=>{this.props.productDel(cart);
+            }}>Delete</button>
+          </td>
+        </tr>
+      )
+    })
+  }
+
   render() {
     return (
       <div
@@ -43,21 +73,7 @@ export default class Modal extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>VinSmart Live</td>
-                    <td>
-                      <img src="./img/vsphone.jpg" width={50} alt="" />
-                    </td>
-                    <td>
-                      <button>-</button>1<button>+</button>
-                    </td>
-                    <td>5700000</td>
-                    <td>5700000</td>
-                    <td>
-                      <button className="btn btn-danger">Delete</button>
-                    </td>
-                  </tr>
+                  {this.renderCart()}
                 </tbody>
               </table>
             </div>
