@@ -20,7 +20,7 @@ function App() {
     <div class="container">
       {/* <Baitap1/> */}
       {/* <Baitap3/> */}
-      <RenderingElements/>
+      {/* <RenderingElements/>
       <hr/>
       <HandlingEvent/>
       <hr/>
@@ -35,7 +35,7 @@ function App() {
       <Communication/>
       <hr/>
       <LiftingStateUpCart/>
-      <hr/>
+      <hr/> */}
       <Home/>
     </div>
   );
