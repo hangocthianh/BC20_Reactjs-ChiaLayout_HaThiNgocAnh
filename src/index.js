@@ -7,12 +7,19 @@ import reportWebVitals from './reportWebVitals';
 import "jquery/dist/jquery.min.js";
 import "popper.js/dist/umd/popper.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
-
+import {createStore} from "redux";
+import {Provider} from "react-redux";// để liên kết rudex với react
+import rootReducer from "./redux"
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-  <React.StrictMode>
+  //<React.StrictMode> : để xài các tính năng mới của react
+  <Provider store={store}>
+    
     <App />
-  </React.StrictMode>,
+  </Provider>,
+    
+  //</React.StrictMode>,
   document.getElementById('root')
 );
 

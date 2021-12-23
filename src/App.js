@@ -11,13 +11,17 @@ import ListKeys from './list-keys';
 import ExampleListKey from './list-keys/example';
 import Communication from './communication';
 import LiftingStateUpCart from './shopping-cart';
-import Home from './user-management';
-
+//import Home from './user-management';
+import UsermanagementRedux from "./user-management-redux"
+import Game from './tic-tac-toe/game';
+import FormValidation from './form-validation';
+import LifeCycle from './lifecycle';
+import GameOanTuTi from './baiTapRedux/game-oan-tu-ti';
 
 
 function App() {
   return (
-    <div class="container">
+    <div>
       {/* <Baitap1/> */}
       {/* <Baitap3/> */}
       {/* <RenderingElements/>
@@ -35,8 +39,19 @@ function App() {
       <Communication/>
       <hr/>
       <LiftingStateUpCart/>
-      <hr/> */}
+      <hr/>
       <Home/>
+      <hr/>
+      <UsermanagementRedux/> */}
+      <hr/>
+      <Game/>
+      <hr/>
+      <FormValidation/>
+      <hr/>
+      <LifeCycle/>
+      <hr/>
+      <h2 className="py-4 text-info text-center">GAME OẲN TÙ TÌ</h2>
+      <GameOanTuTi/>
     </div>
   );
 }

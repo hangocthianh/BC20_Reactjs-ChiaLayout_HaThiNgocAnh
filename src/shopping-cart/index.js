@@ -30,7 +30,7 @@ export default class LiftingStateUpCart extends Component {
 
   // thêm sp
   addProduct=(product)=>{
-    let listCart = [...this.state.listCart];
+    let listCart = [...this.state.listCart]; // do array là biến tham chiếu, nên dùng cách của ES6 (spread operator) gắn listCart = [...this.state.listCart] để không làm thay đổi listcart ban đầu
 
     // tìm kiếm xem product có tồn tại trong state.listCart
     const index = this._findIndex(product.maSP)
@@ -48,6 +48,7 @@ export default class LiftingStateUpCart extends Component {
       };
       listCart.push(productCart);
     }
+    // không return được, do cần render lại để thay đổi dc array giỏ hàng mỗi lần thêm nên dùng setState
     this.setState({
       listCart,
     },()=>{
@@ -109,10 +110,14 @@ export default class LiftingStateUpCart extends Component {
             Giỏ hàng ({this.totalQuantity()})
           </button>
         </div>
-        <DanhSachSanPham listProduct={listProduct} detailProduct={this.handleDetailProduct} addProduct={this.addProduct}/>
+        <DanhSachSanPham 
+        listProduct={listProduct} 
+        detailProduct={this.handleDetailProduct} 
+        addProduct={this.addProduct}/>
         <Modal 
         listCart={this.state.listCart} 
-        productDel={this.deleteProduct} productUpdateQuantity={this.handleUpdateQuantity}/>
+        productDel={this.deleteProduct} 
+        productUpdateQuantity={this.handleUpdateQuantity}/>
         <div className="row">
           <div className="col-sm-5">
             <img className="img-fluid" src={detailProduct.hinhAnh} alt="" />
