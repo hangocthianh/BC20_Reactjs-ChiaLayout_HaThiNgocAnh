@@ -12,7 +12,6 @@ const actDeleteUser = (user) => {
     //     type: DELETE_USER,
     //     payload: user,
     // };
-
     // theo cách import 2:
     return {
         type: ActionType.DELETE_USER,
