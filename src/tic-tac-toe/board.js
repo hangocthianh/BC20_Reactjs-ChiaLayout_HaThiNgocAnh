@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import Square from './square';
 
 export default class Board extends Component {
-    renderSquare(i){
-        
-        return <Square content={this.props.content} getContent={this.props.getContent}/>;
+    renderSquare(i) {
+        return <Square content={this.props.content} getContent={this.props.getContent} />
     }
     render() {
         return (
             <div>
                 <h3>Next player: X</h3>
-                <table className="square">
+                <table>
                     <tr >
                         {this.renderSquare(0)}
                         {this.renderSquare(1)}
@@ -27,7 +26,7 @@ export default class Board extends Component {
                         {this.renderSquare(8)}
                     </tr>
                 </table>
-                
+
             </div>
         )
     }

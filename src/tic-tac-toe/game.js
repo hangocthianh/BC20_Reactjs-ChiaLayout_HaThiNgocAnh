@@ -15,7 +15,7 @@ export default class Game extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="container">
                 <h2>TIC-TAC-TOE</h2>
                 <Board content={this.state.boxContent} getContent={this.renderContent} />
             </div>

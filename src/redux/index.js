@@ -1,11 +1,9 @@
 import {combineReducers} from "redux";
-//import userReducer from "./reducers/user";
-import gameOanTuTiReducer from "./reducers/gameOanTuTi";
+import userReducer from "./reducers/user";
 
 const rootReducer = combineReducers({
     // combine các child reducer
-    //userReducer, // userReducer: userReducer,
-    gameOanTuTiReducer,
+    userReducer, // userReducer: userReducer,
 
 })
 

@@ -22,7 +22,7 @@ class Home extends Component {
     const index = this._findID(user.id);
     if (index !== -1) {
       let listUser = [...this.state.listUser];
-      this.state.listUser.splice(index, 1);
+      listUser.splice(index, 1);
       this.setState({
         listUser,
       })

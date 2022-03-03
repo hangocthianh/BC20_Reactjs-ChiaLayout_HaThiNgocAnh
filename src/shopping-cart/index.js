@@ -89,12 +89,13 @@ export default class LiftingStateUpCart extends Component {
   }
 
   // thêm số số lượng trong giỏ hàng
+  // mỗi lần bấm thêm giỏ hàng hay nút + - thì state thay đổi kéo theo hàm render chạy lại, và hàm totalQuantity nằm trong render nên sẽ dc gọi chạy lại theo và thưc hiện cộng thêm
   totalQuantity=()=>{
     return this.state.listCart.reduce((total, product)=>{
       return total + product.soLuong;
     },0);
-
   }
+  
 
   render() {
     const {listProduct, detailProduct} = this.state;

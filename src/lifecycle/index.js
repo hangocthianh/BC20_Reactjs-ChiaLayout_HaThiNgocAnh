@@ -39,9 +39,9 @@ export default class LifeCycle extends Component {
        // return false;: ko set lại state thì 2 hàm sau ko chạy
     }
 
-    componentWillUnmount(){
-        console.log("componentWillUnmount");
-    }
+    // componentWillUnmount(){
+    //     console.log("componentWillUnmount");
+    // }
     render() {
         console.log("render");
         return (
@@ -57,7 +57,7 @@ export default class LifeCycle extends Component {
                 <hr/>
                 <PureChild/>
                 <hr/>
-                
+                {/* kiểm tra statusChild true hay false: sử dựng dấu && (thay cho toán tử 3 ngôi) nghĩa là true thì thực thi Child tiếp, false thì không */}
                 {this.state.statusChild &&<Child number={this.state.number}/>}
                 <button className="btn btn-info" onClick={()=>{
                     this.setState({

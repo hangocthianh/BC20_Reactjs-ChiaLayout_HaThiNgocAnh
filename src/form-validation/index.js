@@ -4,27 +4,32 @@ export default class FormValidation extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            // tên các thuộc tính ở values và errors phải giống nhau.
             values: {
                 manv: "",
                 tennv: "",
                 email: "",
             },
             errors: {
+                // để chứa các giá trị bị sai/lỗi
                 manv: "",
                 tennv: "",
                 email: "",
+                
             },
+            
             formValid: false,
             manvValid: false,
             tennvValid: false,
             emailValid: false,
-
         };
+        
     }
     handleOnChange = (event) => {
         const { name, value } = event.target;
         this.setState(
             {
+                // ...this.state.values để giữ các thông tin thêm trước
                 values: { ...this.state.values, [name]: value },
             },
             () => {

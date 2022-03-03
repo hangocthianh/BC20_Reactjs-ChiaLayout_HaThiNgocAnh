@@ -10,7 +10,6 @@ export default class Child extends Component {
         };
         this.interval = null;
     }
-
     // UNSAFE_componentWillReceiveProps(nextProps){
     //     console.log("UNSAFE_componentWillReceiveProps", nextProps);
     // xét lại state bằng this.setState({})
@@ -31,17 +30,16 @@ export default class Child extends Component {
         return null; // phải có return
         
     }
-
-
     componentDidMount(){
         this.interval = setInterval(()=>{
             console.log("Hello!")
         }, 1000);// cứ 1s sẽ log ra 1 dòng Hello!
     }
 
-    componentWillUnmount(){
-        clearInterval(this.interval); // hàm của js
-    }
+    // componentWillUnmount(){
+    //     //console.log("componentWillUnmount");
+    //     clearInterval(this.interval); // hàm của js
+    // }
     render() {
         return (
             <div>

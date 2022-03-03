@@ -36,8 +36,8 @@ const userReducer = (state = initialState, action) => {
             let userList = [...state.userList]
             if (index !== -1) {
                 userList.splice(index, 1);
-                state.userList = userList;
                 // cập nhật lại state <=> tương đương hàm setState trong component
+                state.userList = userList;
             }
             return { ...state };
         }
